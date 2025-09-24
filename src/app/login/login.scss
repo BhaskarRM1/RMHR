@@ -1,0 +1,50 @@
+.login-wrap {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height: calc(100vh - 64px);
+  padding: 24px;
+  background: #f5f6fb;
+}
+.login-card {
+  width: 680px;
+  padding: 32px 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 12px;
+}
+.app-title {
+  margin: 0;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+}
+.subtitle {
+  margin: 4px 0 16px 0;
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+}
+.form {
+  display:flex;
+  flex-direction:column;
+  gap: 16px;
+}
+.full { width: 100%; }
+.login-btn {
+  height: 44px;
+  font-weight: 600;
+}
+.actions {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 13px;
+  margin-top: 6px;
+}
+.actions a {
+  text-decoration: none;
+  color: #5c6bc0;
+  font-weight: 500;
+}
+

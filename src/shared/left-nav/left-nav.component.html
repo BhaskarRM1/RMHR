@@ -1,0 +1,39 @@
+<aside class="left-nav" [class.collapsed]="collapsed()">
+  <nav class="items">
+    <ng-container *ngFor="let it of visibleItems()">
+      <a class="item"
+         *ngIf="!it.children"
+         [routerLink]="linkFor(it)"
+         routerLinkActive="active"
+         [matTooltip]="collapsed() ? it.label : ''"
+         matTooltipPosition="right">
+        <mat-icon class="icon">{{ it.icon }}</mat-icon>
+        <span class="label" *ngIf="!collapsed()">{{ it.label }}</span>
+      </a>
+
+      <div class="group" *ngIf="it.children">
+        <div class="item group-label">
+          <mat-icon class="icon">{{ it.icon }}</mat-icon>
+          <span class="label" *ngIf="!collapsed()">{{ it.label }}</span>
+          <mat-icon class="chevron" *ngIf="!collapsed()">chevron_right</mat-icon>
+        </div>
+        <div class="submenu">
+          <a class="item child"
+             *ngFor="let c of visibleChildren(it)"
+             [routerLink]="linkFor(c)"
+             routerLinkActive="active">
+            <mat-icon class="icon">{{ c.icon }}</mat-icon>
+            <span class="label">{{ c.label }}</span>
+          </a>
+        </div>
+      </div>
+    </ng-container>
+  </nav>
+  <button mat-fab color="primary" class="collapse-toggle"
+          (click)="toggle()"
+          [matTooltip]="collapsed() ? 'Expand' : 'Collapse'"
+          matTooltipPosition="right"
+          aria-label="Toggle sidebar">
+    <mat-icon>{{ collapsed() ? 'chevron_right' : 'chevron_left' }}</mat-icon>
+  </button>
+</aside>

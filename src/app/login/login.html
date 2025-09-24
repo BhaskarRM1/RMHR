@@ -1,0 +1,36 @@
+<div class="login-wrap">
+  <mat-card class="login-card">
+    <h1 class="app-title">RM1 HR</h1>
+    <p class="subtitle">Login</p>
+
+    <form (ngSubmit)="submit()" class="form" autocomplete="off">
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Email Address</mat-label>
+        <input matInput [(ngModel)]="email" name="email" type="email" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password" name="password" required />
+        <button mat-icon-button matSuffix type="button" (click)="hide = !hide" [attr.aria-label]="'Toggle password visibility'">
+          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        class="full login-btn"
+        inProgressButton
+        inProgressText="Logging in...">
+        Login
+      </button>
+
+      <div class="actions">
+        <a routerLink="/forgot-password">Forgot password?</a>
+      </div>
+    </form>
+  </mat-card>
+</div>
+
