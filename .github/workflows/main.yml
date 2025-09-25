@@ -3,7 +3,7 @@ name: Deploy React App to Azure WebApp
 on:
   push:
     branches:
-      - main   # 👈 change if you use another branch
+      - main   # 👈 change if you use another branchh
 
 jobs:
   build-and-deploy:
