@@ -31,5 +31,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'RM1HRN'   # 👈 your Azure WebApp name
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
-          package: ./
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ./dist/RMHR
