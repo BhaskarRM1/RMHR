@@ -20,11 +20,11 @@ jobs:
         with:
           node-version: '22.x'
 
-      # Step 3: Install dependencies & build React app
-      - name: Install dependencies and build
-        run: |
-          npm ci
-          npm run build
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Angular app
+        run: npm run build
 
       # Step 4: Deploy to Azure WebApp
       - name: Deploy React App to Azure WebApp
